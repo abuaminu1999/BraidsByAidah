@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <h1><span>A</span>idah <span>A</span>minu</h1>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger"><div class="bar"></div></div>
+                    <ul>
+                        <li><a href="index.html" data-after="Home">Home</a></li>
+                        <li><a href="index.html#services" data-after="Servizi">Servizi</a></li>
+                        <li><a href="galleria.html" data-after="About">Galleria</a></li>
+                        <li><a href="index.html#about" data-after="About">About</a></li>
+                        <li><a href="index.html#contact" data-after="Contact">contatti</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+     <section>
+        <div class="galleria">
+            <h1 class="section-title">G A L L<span>E</span> R I A</h1>
+            <div class="cont">
+            <div class="video-container image-container image">
+                <div class="video"><video src="./File_foto_video/video/video1.mp4" controls></video></div>
+                <div class="image"><img src="./File_foto_video/Foto/moto/1.jpg" alt="Foto moto"></div>
+                <div class="video"><video src="./File_foto_video/video/video2.mp4" controls></video></div>
+                <div class="video"><video src="./File_foto_video/video/video3.mp4" controls></video></div>
+                <div class="image"><img src="./File_foto_video/Foto/moto/marc1.jpg" alt="Foto moto"></div>
+                <div class="video"><video src="./File_foto_video/video/video4.mp4" controls></video></div>
+                <div class="video"><video src="./File_foto_video/video/video5.mp4" controls></video></div>
+                <div class="video"><video src="./File_foto_video/video/video6.mp4" controls></video></div>
+                <div class="video"><video src="./File_foto_video/video/video7.mp4" controls></video></div>
+                <div class="video"><video src="./File_foto_video/video/video8.mp4" controls></video></div>
+            </div>
+            <div class="popup-video">
+                <span>&times;</span>
+                <video src="./File_foto_video/video/martin.mp4" controls></video>
+            </div>
+        </div>
+                <div class="image-container">
+    
+                </div>
+                <div class="popup-image">
+                    <span>&times;</span>
+                    <img src="./File_foto_video/Foto/moto/1.jpg" alt="Foto moto">
+                </div> 
+        </div>
+        <script>
+            document.querySelectorAll('.image-container img').forEach(image =>{
+                image.onclick = () => {
+                    document.querySelector('.popup-image').style.display = 'block';
+                    document.querySelector('.popup-image img').src = image.getAttribute('src');
+                }
+            });
+            document.querySelector('.popup-image span').onclick = () =>{
+                document.querySelector('.popup-image').style.display = 'none';
+            }
+        </script>
+
+        <script>
+            document.querySelectorAll('.video-container video').forEach(vid => {
+                vid.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.querySelector('.popup-video').style.display = 'block';
+                    const popupVid = document.querySelector('.popup-video video');
+                    popupVid.src = vid.getAttribute('src');
+                    popupVid.play();
+                });
+            });
+        document.querySelector('.popup-video span').addEventListener('click', () => {
+            const popupVid = document.querySelector('.popup-video video');
+            popupVid.pause();
+            document.querySelector('.popup-video').style.display = 'none';
+        });
+        </script>               
+     </section>
