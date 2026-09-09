@@ -323,8 +323,8 @@ p{
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: rgb(201, 71, 203);
-    opacity: .4;
+    background-color: rgb(203, 71, 100);
+    opacity: .15;
     z-index: -1;
 }
 #services .service-bottom .icon{ /* icona */
